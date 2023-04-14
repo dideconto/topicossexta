@@ -4,12 +4,11 @@ GET http://localhost:3000
 ### Requisição passando parametros na URL
 GET http://localhost:3000/12/arroz
 
-### Requisição passando informação pelo corpo da requisição
+### Requisição passando informação pelo corpo da requisição / Cadastrar produto
 POST http://localhost:3000
 Content-Type: application/json
 
 {
-    "id" : 1,
-    "nome" : "Alimento",
-    "descricao" : "Descrição da categoria"
+    "nome" : "Arroz",
+    "preco" : 10
 }
