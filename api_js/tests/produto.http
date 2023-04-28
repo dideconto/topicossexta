@@ -1,0 +1,14 @@
+### Listar produtos
+GET http://localhost:3000
+
+### Requisição passando parametros na URL
+GET http://localhost:3000/arroz
+
+### Cadastrar produto
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+    "nome" : "213123123",
+    "preco" : 10
+}
