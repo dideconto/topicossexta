@@ -1,10 +1,47 @@
-function Soma(){
-    return (<h2>Função de soma</h2>);
-}
+//Todo componente deve ter a primeira letra maiúscula
+//Todo componente deve ter uma função que retorna um HTML
+//Todo componente deve ser exportado
 
-// Criar duas caixas de texto
-// Criar um botão
-// Somar os dois valores
-// Exibir em alert e depois no HTML
+import { useState } from "react";
+
+//Todo componente deve retornar apenas um elemento pai HTML
+function Soma() {
+  const [num1, setNum1] = useState<any>();
+  const [num2, setNum2] = useState<any>();
+  const [soma, setSoma] = useState<any>();
+
+  function clicarNoBotao() {
+    setSoma(Number.parseInt(num1) + Number.parseInt(num2));
+    console.log(soma);
+  }
+
+  function escreverCaixaTexto1(event: any) {
+    setNum1(event.target.value);
+    // console.log(num1);
+  }
+
+  function escreverCaixaTexto2(event: any) {
+    setNum2(event.target.value);
+    // console.log(num2);
+  }
+
+  return (
+    <div>
+      <h1> Componente da soma</h1>
+      <div>
+        <label>Número 1:</label>
+        <input type="text" onChange={escreverCaixaTexto1} />
+      </div>
+      <div>
+        <label>Número 2:</label>
+        <input type="text" onChange={escreverCaixaTexto2} />
+      </div>
+      <div>
+        <button onClick={clicarNoBotao}>Somar</button>
+        <span>{soma}</span>
+      </div>
+    </div>
+  );
+}
 
 export default Soma;
