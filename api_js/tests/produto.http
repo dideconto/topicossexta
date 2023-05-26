@@ -1,11 +1,11 @@
 ### Listar produtos
-GET http://localhost:3000
+GET http://localhost:3001
 
 ### Requisição passando parametros na URL
-GET http://localhost:3000/arroz
+GET http://localhost:3001/arroz
 
 ### Cadastrar produto
-POST http://localhost:3000
+POST http://localhost:3001
 Content-Type: application/json
 
 {
