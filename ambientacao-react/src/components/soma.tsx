@@ -1,10 +1,10 @@
+import { useState } from "react";
+
 //Todo componente deve ter a primeira letra maiúscula
 //Todo componente deve ter uma função que retorna um HTML
 //Todo componente deve ser exportado
-
-import { useState } from "react";
-
 //Todo componente deve retornar apenas um elemento pai HTML
+
 function Soma() {
   const [num1, setNum1] = useState<any>();
   const [num2, setNum2] = useState<any>();
@@ -17,7 +17,6 @@ function Soma() {
 
   function escreverCaixaTexto1(event: any) {
     setNum1(event.target.value);
-    // console.log(num1);
   }
 
   function escreverCaixaTexto2(event: any) {
@@ -37,7 +36,7 @@ function Soma() {
         <input type="text" onChange={escreverCaixaTexto2} />
       </div>
       <div>
-        <button onClick={clicarNoBotao}>Somar</button>
+        <button onClick={clicarNoBotao}>Calcular</button>
         <span>{soma}</span>
       </div>
     </div>
