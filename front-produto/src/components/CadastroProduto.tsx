@@ -1,16 +1,29 @@
 import axios from "axios";
 import { useState } from "react";
+import { Produto } from "../models/produto.model";
 
-function Operacao() {
+function CadastroProduto() {
   const [nome, setNome] = useState("");
   const [preco, setPreco] = useState("");
 
   function enviar() {
-    axios
-      .post("http://localhost:3001", { nome, preco })
-      .then((data) => {})
-      .catch((erro) => {});
     //Enviar o produto para a API, através FETCH ou AXIOS
+    let produto: Produto = new Produto();
+    produto.nome = nome;
+    produto.preco = Number.parseInt(preco);
+
+    axios
+      .post("http://localhost:3001", produto)
+      .then((resposta) => {
+        //Executar algo quando a requisição for bem sucedida
+        //Códigos HTTP na faixa do 200
+        console.log(resposta.data.mensagem);
+      })
+      .catch((erro) => {
+        //Executar algo quando a requisição for mal sucedida
+        //Códigos HTTP na faixa do 400 e 500
+        console.log(erro);
+      });
   }
 
   return (
@@ -37,4 +50,4 @@ function Operacao() {
   );
 }
 
-export default Operacao;
+export default CadastroProduto;

@@ -15,14 +15,14 @@ export class ProdutoController {
     //Laço tradicional - index
     //Foreach
     //Find
-    for(let produtoCadastrado of produtos){
-        if(produtoCadastrado.nome == nome){
-            return response.status(200).json(
-                { message: "Ok", dados : produtoCadastrado }
-            );
-        }
+    for (let produtoCadastrado of produtos) {
+      if (produtoCadastrado.nome == nome) {
+        return response
+          .status(200)
+          .json({ message: "Ok", dados: produtoCadastrado });
+      }
     }
-    return response.status(404).json({message : "Produto não encontrado!"});
+    return response.status(404).json({ message: "Produto não encontrado!" });
   }
 
   cadastrar(request: Request, response: Response): Response {
@@ -34,6 +34,6 @@ export class ProdutoController {
 
     return response
       .status(201)
-      .json({ message: "Produto cadastrado!", dados: produto });
+      .json({ mensagem: "Produto cadastrado!", dados: produto });
   }
 }
