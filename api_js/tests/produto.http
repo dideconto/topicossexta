@@ -2,13 +2,13 @@
 GET http://localhost:3001
 
 ### Requisição passando parametros na URL
-GET http://localhost:3001/arroz
+GET http://localhost:3001/1
 
 ### Cadastrar produto
 POST http://localhost:3001
 Content-Type: application/json
 
 {
-    "nome" : "213123123",
+    "nome" : "Bolacha",
     "preco" : 10
 }

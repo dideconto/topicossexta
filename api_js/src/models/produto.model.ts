@@ -1,4 +1,5 @@
-export class Produto{
-    nome! : string;
-    preco! : number;
+export class Produto {
+  id!: number;
+  nome!: string;
+  preco!: number;
 }
