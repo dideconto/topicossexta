@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function ListarProdutos() {
   const [produtos, setProdutos] = useState([]);
@@ -31,9 +32,13 @@ function ListarProdutos() {
         <tbody>
           {produtos.map((produto: any) => (
             <tr>
-              <td></td>
+              <td>{produto.id}</td>
               <td>{produto.nome}</td>
               <td>{produto.preco}</td>
+              <td>
+                {/* <Link to={"/detalhes/" + produto.id}> Detalhes </Link> */}
+                <Link to={`/detalhar/${produto.id}`}> Detalhes </Link>
+              </td>
             </tr>
           ))}
         </tbody>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Produto } from "../models/produto.model";
+import { Produto } from "../../models/produto.model";
 
 function CadastroProduto() {
   const [nome, setNome] = useState("");
@@ -17,6 +17,7 @@ function CadastroProduto() {
       .then((resposta) => {
         //Executar algo quando a requisição for bem sucedida
         //Códigos HTTP na faixa do 200
+        //Redirecionar para o componente da listagem
         console.log(resposta.data.mensagem);
       })
       .catch((erro) => {
