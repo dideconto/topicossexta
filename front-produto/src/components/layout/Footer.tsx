@@ -1,5 +1,7 @@
+import "./footer.css";
+
 function Footer() {
-  return <footer>Rodapé</footer>;
+  return <footer className="footer">Rodapé</footer>;
 }
 
 export default Footer;

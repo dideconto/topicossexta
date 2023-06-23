@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Produto } from "../../models/produto.model";
+import Button from "@mui/material/Button";
 
 function CadastroProduto() {
   const [nome, setNome] = useState("");
@@ -19,6 +20,8 @@ function CadastroProduto() {
         //Códigos HTTP na faixa do 200
         //Redirecionar para o componente da listagem
         console.log(resposta.data.mensagem);
+        setNome("");
+        setPreco("");
       })
       .catch((erro) => {
         //Executar algo quando a requisição for mal sucedida
@@ -45,7 +48,9 @@ function CadastroProduto() {
         />
       </div>
       <div>
-        <button onClick={enviar}>Cadastrar</button>
+        <Button variant="outlined" color="error" onClick={enviar}>
+          Cadastrar
+        </Button>
       </div>
     </div>
   );

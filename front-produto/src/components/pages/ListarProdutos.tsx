@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 function ListarProdutos() {
   const [produtos, setProdutos] = useState([]);
 
-  //Função de carregamento do componente
-  //React Router DOM - https://www.youtube.com/watch?v=7b42lVMdEjE
-  useEffect(() => {
+  function carregarDados() {
     axios
       .get("http://localhost:3001")
       .then((resposta) => {
@@ -16,7 +14,24 @@ function ListarProdutos() {
       .catch((erro) => {
         console.log(erro);
       });
+  }
+
+  //Função de carregamento do componente
+  //React Router DOM - https://www.youtube.com/watch?v=7b42lVMdEjE
+  useEffect(() => {
+    carregarDados();
   }, []);
+
+  function remover(id: number) {
+    axios
+      .delete("http://localhost:3001/" + id)
+      .then((resposta) => {
+        carregarDados();
+      })
+      .catch((erro) => {
+        // console.log(erro);
+      });
+  }
 
   return (
     <div>
@@ -27,6 +42,8 @@ function ListarProdutos() {
             <th>#</th>
             <th>Nome</th>
             <th>Preço</th>
+            <th>Detalhes</th>
+            <th>Remover</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +55,9 @@ function ListarProdutos() {
               <td>
                 {/* <Link to={"/detalhes/" + produto.id}> Detalhes </Link> */}
                 <Link to={`/detalhar/${produto.id}`}> Detalhes </Link>
+              </td>
+              <td>
+                <button onClick={() => remover(produto.id)}>Remover</button>
               </td>
             </tr>
           ))}

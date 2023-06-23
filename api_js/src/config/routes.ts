@@ -7,5 +7,6 @@ const router: Router = Router();
 router.post("/", new ProdutoController().cadastrar);
 router.get("/", new ProdutoController().listar);
 router.get("/:id", new ProdutoController().buscar);
+router.delete("/:id", new ProdutoController().deletar);
 
 export { router };

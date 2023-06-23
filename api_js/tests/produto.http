@@ -4,6 +4,9 @@ GET http://localhost:3001
 ### Requisição passando parametros na URL
 GET http://localhost:3001/1
 
+### Requisição para deletar o produto
+DELETE http://localhost:3001/2
+
 ### Cadastrar produto
 POST http://localhost:3001
 Content-Type: application/json
